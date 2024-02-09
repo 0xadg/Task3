@@ -1,0 +1,30 @@
+﻿<Window x:Class="WpfApp1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="309.6" Width="567.2">
+    <Grid>
+        <Label Content="Поставщик:" HorizontalAlignment="Right" Margin="0,0,463,241" VerticalAlignment="Bottom" Width="73"/>
+        <DataGrid x:Name="itemGrid" Margin="0,0,195,73" AlternatingRowBackground="#FFFFB20B" AutoGenerateColumns="False" HorizontalAlignment="Right" Width="341" Height="140" VerticalAlignment="Bottom" LoadingRow="itemGrid_LoadingRow">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Название" Binding="{Binding Path=Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <DataGridTextColumn Header="Количество" Binding="{Binding Path=Amount, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <DataGridTextColumn Header="Цена" Binding="{Binding Path=Price, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <DataGridTextColumn Header="Сумма" Binding="{Binding Path=Sum}" IsReadOnly="True"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Content="Word" HorizontalAlignment="Right" Margin="0,0,449.8,32" VerticalAlignment="Bottom" Width="86" Height="36" Click="Button_Click"/>
+        <TextBox x:Name="supplierTextBox" HorizontalAlignment="Right" Margin="0,0,195,245" Text="" TextWrapping="Wrap" VerticalAlignment="Bottom" Width="263"/>
+        <Label Content="Покупатель:" HorizontalAlignment="Right" Margin="0,0,458,218" VerticalAlignment="Bottom" Width="78"/>
+        <TextBox x:Name="buyerTextBox" HorizontalAlignment="Right" Margin="0,0,195,222" Text="" TextWrapping="Wrap" VerticalAlignment="Bottom" Width="258"/>
+        <Label Content="Заказ №:" HorizontalAlignment="Right" Margin="0,0,83,241" VerticalAlignment="Bottom" Width="63"/>
+        <TextBox HorizontalAlignment="Right" Margin="0,0,19,245" Text="1" TextWrapping="Wrap" VerticalAlignment="Bottom" Width="64" Name="invIDTextbox"/>
+        <Label Content="10.10.2010" Name="dateLabel" HorizontalAlignment="Right" Margin="0,0,19,214" VerticalAlignment="Bottom" Width="70"/>
+        <Label Name="totalLabel" Content="Итого: 0 рублей" HorizontalAlignment="Right" Margin="0,0,195,37" VerticalAlignment="Bottom" FontWeight="Bold"/>
+        <Button Content="Excel" HorizontalAlignment="Right" Margin="0,0,358.8,32" VerticalAlignment="Bottom" Width="86" Height="36" Click="Button_Click_1"/>
+
+    </Grid>
+</Window>
